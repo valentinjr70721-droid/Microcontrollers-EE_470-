@@ -1,26 +1,53 @@
 #include <Arduino.h>
 
-/*
- * ESP8266 LiPo Battery Charging and Discharging Data Logger
- *
- * Description:
- * This program uses an ESP8266 to measure the voltage of a
- * 3.7 V LiPo battery through a voltage divider. Battery voltage
- * is measured every 60 seconds and sent through the serial port
- * for charging analysis.
- *
- * Hardware:
- * - ESP8266 NodeMCU
- * - 3.7 V 900 mAh LiPo Battery
- * - 1 kOhm / 2 kOhm Voltage Divider
- * - LiPo Charging Module
- *
- * Author: Miguel Valentin
- * Course: EE-470
- * Date: 10/05/26
- * Version: 1 
- *
- */
+//
+//=============================================================
+//Title: ESP8266 LiPo Battery Data Logger
+//=============================================================
+//Program Detail:
+//-------------------------------------------------------------
+//Purpose:
+//  Measure the voltage of a 3.7 V LiPo battery using the
+//  ESP8266 ADC and a voltage divider. The program records
+//  the battery voltage every 60 seconds and sends the data
+//  through the serial port for charging/discharging analysis.
+//
+//Inputs:
+//  - Analog voltage from the LiPo battery through A0
+//  - 1 kOhm and 2 kOhm voltage divider
+//
+//Outputs:
+//- Measurement number
+//  - Elapsed time in minutes
+//  - Raw ADC value
+//  - Calculated battery voltage in volts
+//  - Data displayed through the Serial Monitor
+//
+//Date:
+//  October 5 2026
+// Compiler:
+//   PlatformIO / Arduino Framework for ESP8266
+//
+// //Author:
+//    Miguel Valentin
+// 
+//  Versions:
+//    V1 - Initial battery voltage measurement program
+//    V2 - Added 60-second automatic data collection
+//    V3 - Added ADC calibration and median filtering
+// 
+// -------------------------------------------------------------
+//  File Dependencies:
+//    Arduino.h
+// =============================================================
+
+
+#include <Arduino.h>
+
+
+//=============================================================
+// Main Program
+//=============================================================
 
 
 
